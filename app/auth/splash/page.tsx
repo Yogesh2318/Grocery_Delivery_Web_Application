@@ -1,13 +1,5 @@
-'use client'
-import { useEffect } from 'react'
-
-
-
+import { SplashScreen } from "@/component/splash-screen";
 
 export default function Splash() {
-
-return(
-
-<div className='flex items-center justify-center h-screen'> hello</div>)
-
+  return <SplashScreen />;
 }
