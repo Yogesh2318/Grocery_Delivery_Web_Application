@@ -4,7 +4,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useUserStore } from "@/store/user-store";
-
+import color_corrot from "@/public/color_carrot.svg"
+import bw_corrot from "@/public/bw_carrot.svg"
+import onboarding_screen from "@/public/onboarding_screen.svg"
+import c_logo from "@/public/c_logo.svg"
 const countries = [
   { code: "+880", label: "Bangladesh", flag: "BD" },
   { code: "+91", label: "India", flag: "IN" },
@@ -25,17 +28,14 @@ function BackButton() {
   );
 }
 
-function CarrotLogo({ light = false }: { light?: boolean }) {
-  const fill = light ? "#ffffff" : "#F05A3D";
-  const leaf = light ? "#ffffff" : "#58B87A";
-
+function CarrotLogo({ light = true }: { light?: boolean }) {
   return (
     <div className="mx-auto h-12 w-12">
-      <svg viewBox="0 0 64 64" role="img" aria-label="Ahoum carrot mark">
-        <path d="M27 20c8 2 15 8 18 16L20 52c-4-12-2-24 7-32Z" fill={fill} />
-        <path d="M34 17c1-8 8-10 12-12 1 8-4 13-12 12Z" fill={leaf} />
-        <path d="M39 20c4-6 10-5 15-4-4 6-9 8-15 4Z" fill={leaf} />
-      </svg>
+      {light ? (
+        <img src={color_corrot.src} alt="Carrot Logo" className="h-full w-full" />
+      ) : (
+        <img src={c_logo.src} alt="Carrot Logo" className="h-full w-full" />
+      )}
     </div>
   );
 }
@@ -52,7 +52,6 @@ function AuthFrame({
       <section className="mx-auto grid min-h-screen w-full overflow-hidden bg-white lg:min-h-[calc(100vh-64px)] lg:max-w-6xl lg:grid-cols-[0.95fr_1.05fr] lg:rounded-[8px] lg:border lg:border-[#dfe7d9] lg:shadow-sm lg:shadow-black/5">
         <div className="hidden bg-[#53B878] p-10 text-white lg:flex lg:flex-col lg:justify-between">
           <div>
-            <CarrotLogo light />
             <p className="mt-6 text-sm font-semibold uppercase">Ahoum Fresh</p>
             <h1 className="mt-4 text-5xl font-black leading-tight">{title}</h1>
           </div>
@@ -489,16 +488,10 @@ export function OnboardingScreen() {
   return (
     <AuthFrame title="Welcome to Ahoum">
       <section className="relative flex flex-1 flex-col justify-end overflow-hidden bg-[#243729] px-6 pb-16 text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,#6fbf86_0,#456f50_28%,transparent_54%)]" />
-        <div className="absolute left-1/2 top-16 h-72 w-52 -translate-x-1/2 rounded-t-full bg-[#f4d8bf]" />
-        <div className="absolute left-1/2 top-20 h-24 w-24 -translate-x-1/2 rounded-full bg-[#f0c39e]" />
-        <div className="absolute left-1/2 top-10 h-16 w-32 -translate-x-1/2 rounded-t-full bg-[#17211a]" />
-        <div className="absolute left-1/2 top-36 h-36 w-40 -translate-x-1/2 rounded-[24px] bg-[#315a39]" />
-        <div className="absolute left-[calc(50%-76px)] top-40 h-28 w-9 rotate-12 rounded-full bg-[#f0c39e]" />
-        <div className="absolute left-[calc(50%+44px)] top-40 h-28 w-9 -rotate-12 rounded-full bg-[#f0c39e]" />
-        <div className="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-black/75 to-transparent" />
+  
         <div className="relative text-center">
-          <CarrotLogo light />
+          
+          <CarrotLogo light={false} />
           <h1 className="mt-4 text-3xl font-black leading-tight">
             Welcome to our store
           </h1>
@@ -511,7 +504,8 @@ export function OnboardingScreen() {
           >
             Get Started
           </Link>
-        </div>
+          </div>
+       
       </section>
     </AuthFrame>
   );
