@@ -12,6 +12,7 @@ interface ProductCardProps {
   onAdd: () => void;
   onDecrease: () => void;
   onToggleFavorite: () => void;
+  onOpen?: () => void;
 }
 
 export function ProductCard({
@@ -21,9 +22,13 @@ export function ProductCard({
   onAdd,
   onDecrease,
   onToggleFavorite,
+  onOpen,
 }: ProductCardProps) {
   return (
-    <article className="group flex min-h-[260px] flex-col rounded-[8px] border border-[#e1e7dc] bg-white p-3 shadow-sm shadow-black/5 transition hover:-translate-y-0.5 hover:shadow-md">
+    <article
+      className="group flex min-h-[260px] cursor-pointer flex-col rounded-[8px] border border-[#e1e7dc] bg-white p-3 shadow-sm shadow-black/5 transition hover:-translate-y-0.5 hover:shadow-md"
+      onClick={onOpen}
+    >
       <div className="relative aspect-square overflow-hidden rounded-[8px] bg-[#edf2e7]">
         <Image
           className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
@@ -39,10 +44,13 @@ export function ProductCard({
               : "border-white/80 bg-white/90 text-[#52604e]"
           }`}
           type="button"
-          onClick={onToggleFavorite}
+          onClick={(event) => {
+            event.stopPropagation();
+            onToggleFavorite();
+          }}
           aria-pressed={isFavorite}
         >
-          {isFavorite ? "Saved" : "Save"}
+          {isFavorite ? "Fav" : "Fav"}
         </button>
       </div>
 
@@ -67,8 +75,14 @@ export function ProductCard({
           </p>
           <QuantityControl
             quantity={quantity}
-            onAdd={onAdd}
-            onDecrease={onDecrease}
+            onAdd={(event) => {
+              event.stopPropagation();
+              onAdd();
+            }}
+            onDecrease={(event) => {
+              event.stopPropagation();
+              onDecrease();
+            }}
           />
         </div>
       </div>
