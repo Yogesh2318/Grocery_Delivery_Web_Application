@@ -8,6 +8,14 @@ interface UserState {
   isLoggedIn: boolean;
   dummyEmail: string;
   dummyPassword: string;
+  signupDraft: {
+    name: string;
+    email: string;
+    password: string;
+    phone: string;
+    code: string;
+  };
+  setSignupDraft: (draft: Partial<UserState["signupDraft"]>) => void;
   setLocation: (location: string) => void;
   completeAuth: (email: string, password: string) => boolean;
   logout: () => void;
@@ -23,6 +31,15 @@ export const useUserStore = create<UserState>((set) => ({
   isLoggedIn: false,
   dummyEmail: "imshuvo97@gmail.com",
   dummyPassword: "nectar123",
+  signupDraft: {
+    name: "Afsar Hossen Shuvo",
+    email: "imshuvo97@gmail.com",
+    password: "nectar123",
+    phone: "+880",
+    code: "",
+  },
+  setSignupDraft: (draft) =>
+    set((state) => ({ signupDraft: { ...state.signupDraft, ...draft } })),
   setLocation: (location) =>
     set((state) => ({ user: { ...state.user, location } })),
   completeAuth: (email, password) => {
