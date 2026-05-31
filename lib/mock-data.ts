@@ -46,7 +46,7 @@ export const products: Product[] = [
     unit: "2 pcs",
     rating: 4.8,
     deliveryEta: "12 min",
-    image: "/image.jpg",
+    image: "/pomegranate.jpg",
     featured: true,
   },
   {
@@ -57,7 +57,7 @@ export const products: Product[] = [
     unit: "pack of 2",
     rating: 4.7,
     deliveryEta: "15 min",
-    image: "/image.jpg",
+    image: "/avacado.jpg",
   },
   {
     id: "spinach",
@@ -67,7 +67,7 @@ export const products: Product[] = [
     unit: "150 g",
     rating: 4.6,
     deliveryEta: "10 min",
-    image: "/image.jpg",
+    image: "/spinach.jpg",
     featured: true,
   },
   {
@@ -78,7 +78,7 @@ export const products: Product[] = [
     unit: "500 g",
     rating: 4.5,
     deliveryEta: "9 min",
-    image: "/image.jpg",
+    image: "/tomato.jpg",
   },
   {
     id: "milk",
@@ -88,7 +88,7 @@ export const products: Product[] = [
     unit: "1 L",
     rating: 4.9,
     deliveryEta: "8 min",
-    image: "/image.jpg",
+    image: "/milk.jpg",
     featured: true,
   },
   {
@@ -99,7 +99,7 @@ export const products: Product[] = [
     unit: "400 g",
     rating: 4.7,
     deliveryEta: "14 min",
-    image: "/image.jpg",
+    image: "/greek_yogurt.jpg",
   },
   {
     id: "sourdough",
@@ -109,7 +109,7 @@ export const products: Product[] = [
     unit: "1 loaf",
     rating: 4.8,
     deliveryEta: "18 min",
-    image: "/image.jpg",
+    image: "/sourdough.jpg",
   },
   {
     id: "croissant",
@@ -119,7 +119,7 @@ export const products: Product[] = [
     unit: "pack of 2",
     rating: 4.6,
     deliveryEta: "16 min",
-    image: "/image.jpg",
+    image: "/croissant.jpg",
   },
   {
     id: "basmati-rice",
@@ -129,7 +129,7 @@ export const products: Product[] = [
     unit: "1 kg",
     rating: 4.8,
     deliveryEta: "20 min",
-    image: "/image.jpg",
+    image: "/basmati_rice.jpg",
   },
   {
     id: "olive-oil",
@@ -139,6 +139,6 @@ export const products: Product[] = [
     unit: "500 ml",
     rating: 4.9,
     deliveryEta: "22 min",
-    image: "/image.jpg",
+    image: "/olive_oil.jpg",
   },
 ];

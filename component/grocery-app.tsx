@@ -179,7 +179,7 @@ export function GroceryApp() {
               <div className="relative overflow-hidden rounded-[8px] bg-white/20">
                 <Image
                   className="h-full w-full object-cover"
-                  src="/image.jpg"
+                  src="/color_carrot.svg"
                   alt="Fresh grocery offer"
                   fill
                   sizes="112px"
