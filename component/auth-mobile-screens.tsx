@@ -50,18 +50,51 @@ function AuthFrame({
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_12%_0%,#fff0ee_0,#ffffff_26%,transparent_48%),radial-gradient(circle_at_88%_0%,#edf8f1_0,#ffffff_32%,transparent_52%)] text-[#111827] lg:bg-[#f6f7f2] lg:px-8 lg:py-8">
       <section className="mx-auto grid min-h-screen w-full overflow-hidden bg-white lg:min-h-[calc(100vh-64px)] lg:max-w-6xl lg:grid-cols-[0.95fr_1.05fr] lg:rounded-[8px] lg:border lg:border-[#dfe7d9] lg:shadow-sm lg:shadow-black/5">
+
+        {/* ── Left panel (desktop only) ── */}
         <div className="hidden bg-[#53B878] p-10 text-white lg:flex lg:flex-col lg:justify-between">
           <div>
-            <p className="mt-6 text-sm font-semibold uppercase">Ahoum Fresh</p>
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-white/60">
+              Ahoum Fresh
+            </p>
             <h1 className="mt-4 text-5xl font-black leading-tight">{title}</h1>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
+              Fresh picks delivered in minutes.
+            </p>
           </div>
-          <div className="relative h-72 overflow-hidden rounded-[8px] bg-white/15">
-            <div className="absolute left-1/2 top-10 h-44 w-36 -translate-x-1/2 rounded-t-full bg-[#f4d8bf]" />
-            <div className="absolute left-1/2 top-14 h-20 w-20 -translate-x-1/2 rounded-full bg-[#f0c39e]" />
-            <div className="absolute left-1/2 top-28 h-28 w-32 -translate-x-1/2 rounded-[20px] bg-[#315a39]" />
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/20 to-transparent" />
+
+          {/* Moving box illustration */}
+          <div className="flex h-48 items-center justify-center overflow-hidden rounded-[8px] bg-white/10">
+            <svg
+              viewBox="0 0 340 160"
+              width="340"
+              height="160"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              {/* speed strips trailing left */}
+              <line x1="10"  y1="62"  x2="148" y2="62"  stroke="rgba(255,255,255,.45)" strokeWidth="5"   strokeLinecap="round" />
+              <line x1="28"  y1="80"  x2="148" y2="80"  stroke="rgba(255,255,255,.3)"  strokeWidth="3.5" strokeLinecap="round" />
+              <line x1="4"   y1="98"  x2="148" y2="98"  stroke="rgba(255,255,255,.5)"  strokeWidth="6"   strokeLinecap="round" />
+              <line x1="40"  y1="116" x2="148" y2="116" stroke="rgba(255,255,255,.25)" strokeWidth="2.5" strokeLinecap="round" />
+              <line x1="18"  y1="130" x2="148" y2="130" stroke="rgba(255,255,255,.18)" strokeWidth="2"   strokeLinecap="round" />
+
+              {/* box body */}
+              <rect x="150" y="44" width="110" height="96" rx="8" fill="rgba(255,255,255,.92)" />
+              {/* lid stripe */}
+              <rect x="150" y="44" width="110" height="18" rx="8" fill="rgba(49,90,57,.8)" />
+              <rect x="150" y="54" width="110" height="8"  fill="rgba(49,90,57,.8)" />
+              {/* cross tape */}
+              <line x1="205" y1="44"  x2="205" y2="140" stroke="rgba(49,90,57,.2)" strokeWidth="2" />
+              <line x1="150" y1="92"  x2="260" y2="92"  stroke="rgba(49,90,57,.2)" strokeWidth="2" />
+              {/* leaf mark */}
+              <path d="M196 104 Q205 95 214 104 Q205 113 196 104Z" fill="#53B878" opacity=".65" />
+              <line x1="205" y1="104" x2="205" y2="112" stroke="#315a39" strokeWidth="1.2" strokeLinecap="round" opacity=".55" />
+            </svg>
           </div>
         </div>
+
+        {/* ── Right panel (form) ── */}
         <div className="flex min-h-screen flex-col lg:min-h-0">{children}</div>
       </section>
     </main>
@@ -487,26 +520,35 @@ export function SignupScreen() {
 export function OnboardingScreen() {
   return (
     <AuthFrame title="Welcome to Ahoum">
-      <section className="relative flex flex-1 flex-col justify-end overflow-hidden bg-[#243729] px-6 pb-16 text-white">
-  
-        <div className="relative text-center">
-          
-          <CarrotLogo light={false} />
-          <h1 className="mt-4 text-3xl font-black leading-tight">
-            Welcome to our store
-          </h1>
-          <p className="mt-3 text-sm text-white/80">
-            Get your groceries in as fast as one hour
-          </p>
-          <Link
-            className="mt-8 grid h-14 w-full place-items-center rounded-[16px] bg-[#53B878] text-sm font-semibold text-white"
-            href="/auth/signup"
-          >
-            Get Started
-          </Link>
-          </div>
-       
-      </section>
+     <section
+  className="relative flex flex-1 flex-col justify-end overflow-hidden bg-[#243729] text-white"
+  style={{ backgroundImage: `url(${onboarding_screen.src})` }}
+>
+  {/* on mobile: cover fills the screen nicely; on desktop: contain so it doesn't zoom */}
+  <div
+    className="absolute inset-0 bg-[#243729] bg-center bg-no-repeat bg-cover lg:bg-contain"
+    style={{ backgroundImage: `url(${onboarding_screen.src})` }}
+  />
+
+  {/* dark scrim so text stays readable regardless of bg-size */}
+  <div className="absolute inset-0 bg-gradient-to-t from-[#243729]/90 via-[#243729]/30 to-transparent" />
+
+  <div className="relative mx-auto w-full max-w-sm px-6 pb-16 pt-10 text-center lg:max-w-md lg:pb-20">
+    <CarrotLogo light={false} />
+    <h1 className="mt-4 text-3xl font-black leading-tight lg:text-4xl">
+      Welcome to our store
+    </h1>
+    <p className="mt-3 text-sm text-white/80 lg:text-base">
+      Get your groceries in as fast as one hour
+    </p>
+    <Link
+      className="mt-8 grid h-14 w-full place-items-center rounded-[16px] bg-[#53B878] text-sm font-semibold text-white"
+      href="/auth/signup"
+    >
+      Get Started
+    </Link>
+  </div>
+</section>
     </AuthFrame>
   );
 }

@@ -23,8 +23,3 @@ input {
   font: inherit;
 }
 
-bg-cover-onboarding {
-  background-image: url("@/public/onboarding_screen.svg");
-  background-size: cover;
-  background-position: center;
-}
