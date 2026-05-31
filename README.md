@@ -1,4 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Grocery Delivery App (Frontend)
+
+A frontend-only grocery delivery mock application built with Next.js as part of an assignment project. The application focuses on delivering a smooth and interactive user onboarding experience with modern UI components and realistic user flows.
+
+## Features
+
+* Splash Screen
+* Interactive Onboarding Flow
+* Mock Sign Up Process
+* Mobile Number Verification Screen
+* Location Selection Screen
+* Login Screen
+* Responsive and User-Friendly Interface
+
+## User Flow
+
+1. Launch the application and view the splash screen.
+2. Navigate through the onboarding screens.
+3. Click **Get Started** to begin the signup flow.
+4. Complete the mock registration process.
+5. Proceed through number verification and location setup screens.
+6. Login and explore the application.
+
+### Quick Access
+
+For demonstration purposes, all onboarding and registration steps can be skipped. A pre-configured dummy user account is available, allowing users and reviewers to directly log in and experience the UI without completing the entire flow.
 
 ## Getting Started
 
@@ -14,23 +39,16 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* Next.js
+* React
+* TypeScript
+* Modern UI Components
 
-## Learn More
+## Purpose
 
-To learn more about Next.js, take a look at the following resources:
+This project was developed as an assignment to demonstrate frontend development skills, user experience design, routing, state management, and interactive onboarding workflows commonly found in grocery delivery applications.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
