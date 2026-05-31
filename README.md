@@ -3,14 +3,41 @@
 A frontend-only grocery delivery mock application built with Next.js as part of an assignment project. The application focuses on delivering a smooth and interactive user onboarding experience with modern UI components and realistic user flows.
 
 ## Features
-
 * Splash Screen
 * Interactive Onboarding Flow
 * Mock Sign Up Process
-* Mobile Number Verification Screen
-* Location Selection Screen
-* Login Screen
-* Responsive and User-Friendly Interface
+* Mobile Number Verification
+* Location Selection
+* Login & Logout Functionality
+* Demo/Dummy User Access for Quick Testing
+
+### Shopping Experience
+
+* Home Screen with Featured Products
+* Product Categories
+* Product Listing Pages
+* Product Search
+* Product Filters
+* Product Details View
+* Add to Cart Functionality
+* Update Item Quantity in Cart
+* Wishlist/Favorites
+* Checkout Flow
+* Order Placement
+
+### User Account
+
+* User Profile
+* Logout Functionality
+
+### UI & Experience
+
+* Responsive Design
+* Interactive User Interface
+* Smooth Navigation Between Screens
+* Modern Grocery Delivery App Layout
+* Mobile-First User Experience
+
 
 ## User Flow
 
